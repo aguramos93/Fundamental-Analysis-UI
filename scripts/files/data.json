@@ -1,13 +1,13 @@
 [
   {
     "symbol": "KO",
-    "price": 56.16,
+    "price": 55.265,
     "beta": 0.616042,
     "volAvg": 15251073,
-    "mktCap": 242143952896,
+    "mktCap": 238284996608,
     "lastDiv": 1.66,
     "range": "43.51-56.48",
-    "changes": 0.25,
+    "changes": -0.475,
     "companyName": "The Coca-Cola Company",
     "currency": "USD",
     "cik": "0000021344",
