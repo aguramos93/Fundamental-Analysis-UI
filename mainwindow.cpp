@@ -6,12 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    callAPIpython();
 }
 
-void MainWindow::callAPIpython(){
+void MainWindow::callAPIpython(QString &argName){
 
-    QString argName = QInputDialog::getText(this, "Entrada", "Ingrese una empresa: ");
     QProcess p;
     QStringList params;
     QString pythonPath = "/home/aguramos93/repos/Fundamental-Analysis-UI/scripts/FMP-API-call.py";
@@ -35,7 +33,7 @@ void MainWindow::readJson(){
     file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     QJsonParseError jsonError;
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll(),&jsonError);
+    QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &jsonError);
     if (jsonError.error != QJsonParseError::NoError){
         qDebug() << jsonError.errorString();
     }
@@ -59,9 +57,13 @@ void MainWindow::readJson(){
 
 }
 
+void MainWindow::on_OK_clicked()
+{
+    QString argName = ui->lineEdit->text();
+    callAPIpython(argName);
+}
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
