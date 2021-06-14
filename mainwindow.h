@@ -21,8 +21,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void callAPIpython();
+    void callAPIpython(QString &argName);
     void readJson();
+    void on_OK_clicked();
 
 private:
     Ui::MainWindow *ui;
