@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget {
-background-image: url(/home/aguramos93/repos/Fundamental-Analysis-UI/pictures/fondo.jpg);
+background-image: url(://pictures/fondo.jpg);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -121,7 +121,7 @@ border-radius: 7px;
    <widget class="QLabel" name="currency">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>690</x>
       <y>290</y>
       <width>161</width>
       <height>41</height>
