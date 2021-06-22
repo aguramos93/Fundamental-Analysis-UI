@@ -12,14 +12,15 @@ void MainWindow::callAPIpython(QString &argName){
 
     QProcess p;
     QStringList params;
-    QString pythonPath = "/home/aguramos93/repos/Fundamental-Analysis-UI/scripts/FMP-API-call.py";
+    QString location = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+    QString pythonPath = location + "/repos/Fundamental-Analysis-UI/scripts/FMP-API-call.py";
 
     params << argName;
     p.start(pythonPath, params);
     bool end = p.waitForFinished(-1);
 
-    qDebug() << "Data file updated" << "\nProcess finished: " << end;
-    qDebug() << "\n" << argName;
+    qDebug() << "\nData file updated" << "\nProcess finished: " << end;
+
     ui->symbol->setText(argName);
 
     readJson();
@@ -29,7 +30,7 @@ void MainWindow::callAPIpython(QString &argName){
 void MainWindow::readJson(){
 
     QFile file;
-    file.setFileName("/home/aguramos93/repos/Fundamental-Analysis-UI/scripts/files/data.json");
+    file.setFileName("data.json");
     file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     QJsonParseError jsonError;
